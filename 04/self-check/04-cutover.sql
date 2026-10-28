@@ -1,6 +1,6 @@
 \set ON_ERROR_STOP on
--- Внешнее условие: old-only writers остановлены; оставшиеся пишут обе суммы.
--- Пока нужны целые копейки, authoritative total_cents сохраняется.
+-- Процессы, пишущие только total_cents, остановлены; остальные пишут обе суммы.
+-- До включения дробных копеек актуальная сумма берётся из total_cents.
 BEGIN;
 UPDATE hw04.orders
 SET total_amount = total_cents::numeric / 100
