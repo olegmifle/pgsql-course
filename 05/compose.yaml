@@ -1,0 +1,20 @@
+name: postgres-homework-05
+services:
+  postgres:
+    image: postgres:18.4-alpine
+    working_dir: /work
+    environment:
+      POSTGRES_USER: course
+      POSTGRES_PASSWORD: course_local
+      POSTGRES_DB: course_hw05
+    volumes:
+      - homework_data:/var/lib/postgresql
+      - ./:/work:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U course -d course_hw05"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+      start_period: 5s
+volumes:
+  homework_data:
