@@ -1,0 +1,4 @@
+EXPLAIN (ANALYZE, BUFFERS, COSTS OFF, TIMING OFF)
+SELECT count(*) FROM events
+WHERE occurred_at >= '2026-10-01 00:00:00+00'
+  AND occurred_at <  '2026-11-01 00:00:00+00';

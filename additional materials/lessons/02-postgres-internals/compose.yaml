@@ -1,0 +1,32 @@
+name: postgres-live-students-02
+services:
+  postgres:
+    image: postgres:18.4-alpine
+    environment:
+      POSTGRES_USER: course
+      POSTGRES_PASSWORD: course_local
+      POSTGRES_DB: course_underhood
+    command:
+      - postgres
+      - -c
+      - shared_buffers=64MB
+      - -c
+      - max_parallel_workers_per_gather=0
+      - -c
+      - bgwriter_lru_maxpages=0
+      - -c
+      - checkpoint_timeout=1h
+      - -c
+      - max_wal_size=1GB
+    volumes:
+      - postgres_data:/var/lib/postgresql
+      - ./:/work:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U course -d course_underhood"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+
+volumes:
+  postgres_data:

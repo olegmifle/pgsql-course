@@ -1,0 +1,2 @@
+BEGIN ISOLATION LEVEL REPEATABLE READ;
+SELECT available AS first_read FROM stock WHERE sku=42;

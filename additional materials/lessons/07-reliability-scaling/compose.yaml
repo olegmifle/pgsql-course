@@ -1,0 +1,10 @@
+name: postgres-live-students-07
+services:
+  lab:
+    build: .
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /tmp/course07/ready && pg_isready -h 127.0.0.1 -p 5540 -U course -d course_lesson07"]
+      interval: 2s
+      timeout: 2s
+      retries: 60
+    stop_grace_period: 10s

@@ -1,0 +1,19 @@
+name: postgres-live-students-06
+services:
+  postgres:
+    image: postgres:18.4-alpine
+    environment:
+      POSTGRES_USER: course
+      POSTGRES_PASSWORD: course_local
+      POSTGRES_DB: course_live06
+    volumes:
+      - live_data:/var/lib/postgresql
+      - ./:/work:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U course -d course_live06"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+      start_period: 5s
+volumes:
+  live_data:

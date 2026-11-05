@@ -1,0 +1,2 @@
+BEGIN ISOLATION LEVEL READ COMMITTED;
+SELECT available AS read_by_a FROM stock WHERE sku=42;

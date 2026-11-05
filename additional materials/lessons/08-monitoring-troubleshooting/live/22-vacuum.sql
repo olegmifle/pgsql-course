@@ -1,0 +1,1 @@
+VACUUM (VERBOSE, TRUNCATE FALSE) incident08.events;
