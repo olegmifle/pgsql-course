@@ -1,0 +1,11 @@
+/results/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+*.pdf
+*.zip
+*.tar
+*.tar.gz
+.env
+# Собственные SQL, retry-policy.md, external-policy.md и report.md отслеживаются.

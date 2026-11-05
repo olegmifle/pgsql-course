@@ -1,0 +1,7 @@
+-- Реализуйте debit(p_org bigint,p_key text,p_wallet bigint,p_amount numeric)
+-- RETURNS TABLE(outcome text,balance_after numeric,job_id bigint).
+-- approved / declined, сохранённый ответ, ключ в области организации.
+-- Новый ключ с валидными реквизитами: один эффект и job только при approved.
+-- Тот же ключ с другими wallet/amount -> 22023. Входная сумма положительная,
+-- не более двух знаков после запятой, без NaN/Infinity; неизвестный кошелёк -> 22023.
+-- Отказ за недостатком денег сохраняется и при повторе не пересчитывается.

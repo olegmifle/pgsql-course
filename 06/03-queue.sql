@@ -1,0 +1,6 @@
+-- Реализуйте claim(p_worker text,p_lease_seconds integer)
+-- RETURNS TABLE(id bigint,claim_version bigint,payload jsonb).
+-- Одно pending или просроченное running задание, либо 0 строк.
+-- complete(p_job bigint,p_version bigint,p_worker text) RETURNS boolean.
+-- Допуск: running, текущие версия/worker и ещё действующая аренда.
+-- После короткого COMMIT claim работа идёт вне транзакции назначения.
