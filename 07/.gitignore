@@ -1,0 +1,10 @@
+/results/
+/images/*.tar
+/images/*.tar.gz
+*.pdf
+*.zip
+*.pyc
+__pycache__/
+.DS_Store
+.env
+# SQL, политики и report.md должны оставаться в Git.

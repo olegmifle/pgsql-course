@@ -1,0 +1,19 @@
+name: postgres-homework-07
+services:
+  lab:
+    image: postgres:18.4-alpine
+    user: postgres
+    entrypoint: ["sh", "/work/lab/boot.sh"]
+    working_dir: /work
+    volumes:
+      - homework_data:/var/lib/postgresql
+      - ./:/work:ro
+    healthcheck:
+      test: ["CMD", "sh", "/work/lab/health.sh"]
+      interval: 2s
+      timeout: 3s
+      retries: 90
+      start_period: 5s
+    stop_grace_period: 30s
+volumes:
+  homework_data:

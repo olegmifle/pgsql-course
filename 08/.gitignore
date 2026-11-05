@@ -1,0 +1,12 @@
+/results/*
+!/results/README.md
+.DS_Store
+Thumbs.db
+.env
+*.pdf
+*.zip
+*.tar
+*.tar.gz
+__pycache__/
+*.pyc
+# Own diagnostic SQL, improve.sql and report.md stay tracked.
