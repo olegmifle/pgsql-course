@@ -1,0 +1,3 @@
+-- Создайте public.readings с полями sensor_id, measured_at, value, quality.
+-- Типы, ограничения и индексы выберите сами по условию homework.md.
+-- Добавьте сюда свой CREATE TABLE и CREATE INDEX.

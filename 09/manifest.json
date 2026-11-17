@@ -1,0 +1,17 @@
+{
+  ".gitignore": "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e",
+  "README.md": "42193d3adab7a50043a09fe10c2ae2392bf0b9ffcdc85f95ca75ceaf89444b72",
+  "bootstrap-replica.sh": "0d8054d4159bea1f9b713466beac55f997041958a07a8377bc36ef48cc075f69",
+  "compose.yaml": "77242042f3e937140c54aac859b6d6edbbceb45a32ef802ccdab20314df7bc09",
+  "homework.md": "766cb3f656eba95e66cc2c26688d010b2d68a2065f36ed0ed30b18c9ffa63c4b",
+  "homework.pdf": "11bc33427dc4fb1e8c3b9b5a1fa6fab8ebc1ccf5043d65190570f7b8d19d6a73",
+  "init/01-replication.sh": "3693292ca7a207b9c917d733b1fa47466fc84121426bdb672ec03168f9060a83",
+  "inspect.sql": "bbd89087328c591dcdb4b8f19caa27b1b5f74998f01ee4953101a3d392365613",
+  "lab.sh": "82a259a51a69eca60655fbe05115d8629023926fdbdb5d3a388f735cffe49bfc",
+  "replica-entrypoint.sh": "ae02080424b4b70e8477522690b8b55e87033ce0d6cbf7c0ff6e56ea496078ce",
+  "report-template.md": "0f5cf6ca33f5fc90cb5aeaee04c92293f5e1c774b02236d312445d4649d35573",
+  "schema.sql": "20bbca75ebbbec8a0e7249b1bfa252b7b35e0141dd4f111b0b5445031bcb8a05",
+  "seed.sql": "38a31fb3fca0c30ab38cbe7077afdc41178bc51208d9bd078f8a43ca0408b6ee",
+  "status-primary.sql": "5e12777d470e8a74944a18b9e28e5a9c9457a8cc99cb6e52c36b6ebd1ca33cda",
+  "status-replica.sql": "bd4b087f08d145ff877c0fbcb223419fb591cd5c3a5415d45c2269136697cb89"
+}

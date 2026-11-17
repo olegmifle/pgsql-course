@@ -1,0 +1,54 @@
+services:
+  primary:
+    image: postgres:18.4-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_lab
+      POSTGRES_DB: telemetry
+      PGDATA: /var/lib/postgresql/18/docker
+    command:
+      - postgres
+      - -c
+      - wal_level=replica
+      - -c
+      - max_wal_senders=5
+      - -c
+      - wal_keep_size=64MB
+      - -c
+      - max_wal_size=256MB
+      - -c
+      - shared_buffers=128MB
+      - -c
+      - max_connections=30
+    shm_size: 128mb
+    mem_limit: 768m
+    cpus: 1
+    volumes:
+      - primary_data:/var/lib/postgresql
+      - ./init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -h 127.0.0.1 -U postgres -d telemetry]
+      interval: 2s
+      timeout: 2s
+      retries: 40
+  replica:
+    image: postgres:18.4-alpine
+    profiles: [replica]
+    environment:
+      PGDATA: /var/lib/postgresql/18/docker
+    entrypoint: [sh, /lab/replica-entrypoint.sh]
+    command: [postgres, -c, shared_buffers=128MB, -c, max_connections=30]
+    shm_size: 128mb
+    mem_limit: 768m
+    cpus: 1
+    volumes:
+      - replica_data:/var/lib/postgresql
+      - ./:/lab:ro
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -h 127.0.0.1 -U postgres -d telemetry]
+      interval: 2s
+      timeout: 2s
+      retries: 40
+volumes:
+  primary_data:
+  replica_data:
